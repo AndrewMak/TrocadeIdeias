@@ -1,0 +1,43 @@
+﻿@model IEnumerable<TrocadeIdeias.MVC.Models.Curso>
+
+@{
+    ViewBag.Title = "Lista de Cursos";
+}
+
+<h2>@ViewBag.Title</h2>
+
+<p>
+    <a href="Curso/Create" id="Adicionar" class="btn btn-primary">Adicionar Curso</a>
+</p>
+<table class="table" id="table" data-toggle="table">
+    <thead>
+        <tr>
+            <th>
+                Curso
+            </th>
+            <th>
+                Descrição
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Titulo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DescCurso)
+        </td>
+        <td>        
+            <a href="/Turma/Index/@item.IdCurso">Ver Turmas</a> |
+            @Html.ActionLink("Editar", "Edit", new { id = item.IdCurso }) |
+            @Html.ActionLink("Apagar", "Delete", new { id = item.IdCurso })
+
+
+        </td>
+    </tr>
+}</tbody>
+
+</table>

@@ -1,0 +1,26 @@
+﻿@model TrocadeIdeias.MVC.Models.Curso
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Curso @Html.DisplayFor(model => model.Titulo)</h2>
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="col-12">
+            <hr /></div>
+        <div class="col-md-6">
+
+            @Html.DisplayFor(model => model.DescCurso)
+
+        </div>
+    </div>
+
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <p>
+            @Html.ActionLink("Voltar", "Index")
+        </p>
+    </div></div>

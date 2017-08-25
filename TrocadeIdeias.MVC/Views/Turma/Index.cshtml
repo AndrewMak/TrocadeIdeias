@@ -1,0 +1,66 @@
+﻿@model IEnumerable<TrocadeIdeias.MVC.Models.Turma>
+
+@{
+    ViewBag.Title = "Lista Turmas";
+}
+
+<h2>Lista Turmas</h2>
+
+<p>
+    <a href="/Turma/Create/@ViewBag.IdCurso" id="Adicionar" class="btn btn-primary">Adicionar Turma</a>
+</p>
+<table class="table" data-toggle="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Curso.Titulo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DescResponsavel)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DataCuso)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HorarioInicio)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IsInscricaoAberta)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Curso.Titulo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DescResponsavel)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DataCuso)
+                </td>
+                <td>
+                    @item.HorarioInicio - @item.HorarioFim  
+                     </td>
+                <td>
+                  @if (item.IsInscricaoAberta == true)
+                  {
+                    <p>Aberto</p>
+                  }
+                </td>
+                <td>
+                    @if (item.IsInscricaoAberta == true)
+                    {
+                        <a href="/inscricao/create/@item.IdTurma">Inscrição |</a> 
+                    }
+                    @Html.ActionLink("Detalhe", "Details", new { id = item.IdTurma })
+                </td>
+            </tr>
+    }
+    </tbody>
+
+</table>

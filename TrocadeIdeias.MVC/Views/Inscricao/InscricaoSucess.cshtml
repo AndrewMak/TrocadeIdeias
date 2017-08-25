@@ -1,0 +1,25 @@
+﻿
+@{
+    ViewBag.Title = "InscricaoSucess";
+}
+@if (ViewBag.Id != 0)
+{
+<h2>Sucesso</h2>
+
+<div class="row">
+    <div class="col-12">
+        Inscrição Realizada com Sucesso numero da inscrição : @ViewBag.Id
+    </div>
+</div>
+}
+else
+{
+    <h2>Erro</h2>
+
+    <div class="row">
+        <div class="col-12">
+           @TempData["Erro"]
+        </div>
+    </div>
+}
+<a href="/turma/">Voltar</a>

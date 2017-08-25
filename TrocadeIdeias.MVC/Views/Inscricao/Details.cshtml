@@ -1,0 +1,66 @@
+﻿@model TrocadeIdeias.MVC.Models.Inscricao
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Inscricao</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Curso.DescCurso)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Curso.DescCurso)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Turma.DescResponsavel)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Turma.DescResponsavel)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Matricula)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Matricula)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DescArea)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DescArea)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DescCargo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DescCargo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Telefone)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Telefone)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.IdInscricao }) |
+    @Html.ActionLink("Voltar", "Index")
+</p>

@@ -1,0 +1,63 @@
+﻿@model IEnumerable<TrocadeIdeias.MVC.Models.Inscricao>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Curso.DescCurso)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Turma.DescResponsavel)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Matricula)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DescArea)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DescCargo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Telefone)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Curso.DescCurso)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Turma.DescResponsavel)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Matricula)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DescArea)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DescCargo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Telefone)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.IdInscricao }) |
+            @Html.ActionLink("Details", "Details", new { id=item.IdInscricao }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.IdInscricao })
+        </td>
+    </tr>
+}
+
+</table>
